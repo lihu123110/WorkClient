@@ -1,0 +1,24 @@
+﻿<Window x:Class="ClientOA.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="1024">
+    <Grid>
+        <TabControl>
+			<TabItem Header="会员管理">
+				<TextBlock Text="Content"/>
+			</TabItem>
+			<TabItem Header="岗位管理">
+				<TextBlock Text="Content"/>
+			</TabItem>
+			<TabItem Header="服务及商品管理">
+				<TextBlock Text="Content"/>
+			</TabItem>
+			<TabItem Header="提成管理">
+				<TextBlock Text="Content"/>
+			</TabItem>
+			<TabItem Header="基本信息管理">
+				<TextBlock Text="Content"/>
+			</TabItem>
+		</TabControl>
+    </Grid>
+</Window>

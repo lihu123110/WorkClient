@@ -1,0 +1,274 @@
+﻿<Window x:Class="ClientOA.Shell2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+        Title="Shell2" Height="300" Width="300" WindowStyle="None"
+        xmlns:viewModel="clr-namespace:ClientOA.ViewModel"
+        xmlns:Behaviors="clr-namespace:ClientOA.Behaviors" 
+        AllowsTransparency="True" Background="{x:Null}">
+    <Window.DataContext>
+        <viewModel:ShellViewModel/>
+    </Window.DataContext>
+    <i:Interaction.Behaviors>
+        <Behaviors:DragWindowBehavior/>
+    </i:Interaction.Behaviors>
+    <Window.Resources>
+        <Storyboard x:Key="CircleMenuShow">
+            <DoubleAnimation BeginTime="0" Storyboard.TargetName="Waterlogging" To="1" Duration="0:0:0.1"  Storyboard.TargetProperty="(UIElement.RenderTransform).(Children)[0].ScaleX" />
+            <DoubleAnimation BeginTime="0" Storyboard.TargetName="Waterlogging" To="1" Duration="0:0:0.1"  Storyboard.TargetProperty="(UIElement.RenderTransform).(Children)[0].ScaleY" />
+
+            <DoubleAnimation BeginTime="0:0:0.1" Storyboard.TargetName="Excessive" To="1" Duration="0:0:0.1"  Storyboard.TargetProperty="(UIElement.RenderTransform).(Children)[0].ScaleX" />
+            <DoubleAnimation BeginTime="0:0:0.1" Storyboard.TargetName="Excessive" To="1" Duration="0:0:0.1"  Storyboard.TargetProperty="(UIElement.RenderTransform).(Children)[0].ScaleY" />
+
+            <DoubleAnimation BeginTime="0:0:0.2" Storyboard.TargetName="Suitable" To="1" Duration="0:0:0.1"  Storyboard.TargetProperty="(UIElement.RenderTransform).(Children)[0].ScaleX" />
+            <DoubleAnimation BeginTime="0:0:0.2" Storyboard.TargetName="Suitable" To="1" Duration="0:0:0.1"  Storyboard.TargetProperty="(UIElement.RenderTransform).(Children)[0].ScaleY" />
+
+            <DoubleAnimation BeginTime="0:0:0.3" Storyboard.TargetName="LightDry" To="1" Duration="0:0:0.1"  Storyboard.TargetProperty="(UIElement.RenderTransform).(Children)[0].ScaleX" />
+            <DoubleAnimation BeginTime="0:0:0.3" Storyboard.TargetName="LightDry" To="1" Duration="0:0:0.1"  Storyboard.TargetProperty="(UIElement.RenderTransform).(Children)[0].ScaleY" />
+
+            <DoubleAnimation BeginTime="0:0:0.4" Storyboard.TargetName="InDrought" To="1" Duration="0:0:0.1"  Storyboard.TargetProperty="(UIElement.RenderTransform).(Children)[0].ScaleX" />
+            <DoubleAnimation BeginTime="0:0:0.4" Storyboard.TargetName="InDrought" To="1" Duration="0:0:0.1"  Storyboard.TargetProperty="(UIElement.RenderTransform).(Children)[0].ScaleY" />
+
+            <DoubleAnimation BeginTime="0:0:0.5" Storyboard.TargetName="SevereDrought" To="1" Duration="0:0:0.1"  Storyboard.TargetProperty="(UIElement.RenderTransform).(Children)[0].ScaleX" />
+            <DoubleAnimation BeginTime="0:0:0.5" Storyboard.TargetName="SevereDrought" To="1" Duration="0:0:0.1"  Storyboard.TargetProperty="(UIElement.RenderTransform).(Children)[0].ScaleY" />
+
+            <DoubleAnimation BeginTime="0:0:0.6" Storyboard.TargetName="ExtremeDrought" To="1" Duration="0:0:0.1"  Storyboard.TargetProperty="(UIElement.RenderTransform).(Children)[0].ScaleX" />
+            <DoubleAnimation BeginTime="0:0:0.6" Storyboard.TargetName="ExtremeDrought" To="1" Duration="0:0:0.1"  Storyboard.TargetProperty="(UIElement.RenderTransform).(Children)[0].ScaleY" />
+
+            <DoubleAnimation BeginTime="0:0:0.7" Storyboard.TargetName="EmtyLayer" To="1" Duration="0:0:0.1"  Storyboard.TargetProperty="(UIElement.RenderTransform).(Children)[0].ScaleX" />
+            <DoubleAnimation BeginTime="0:0:0.7" Storyboard.TargetName="EmtyLayer" To="1" Duration="0:0:0.1"  Storyboard.TargetProperty="(UIElement.RenderTransform).(Children)[0].ScaleY" />
+
+        </Storyboard>
+        <Storyboard x:Key="CircleMenuHidden">
+            <DoubleAnimation BeginTime="0" Storyboard.TargetName="Waterlogging" To="0" Duration="0:0:0.1"  Storyboard.TargetProperty="(UIElement.RenderTransform).(Children)[0].ScaleX" />
+            <DoubleAnimation BeginTime="0" Storyboard.TargetName="Waterlogging" To="0" Duration="0:0:0.1"  Storyboard.TargetProperty="(UIElement.RenderTransform).(Children)[0].ScaleY" />
+
+            <DoubleAnimation BeginTime="0:0:0.1" Storyboard.TargetName="Excessive" To="0" Duration="0:0:0.1"  Storyboard.TargetProperty="(UIElement.RenderTransform).(Children)[0].ScaleX" />
+            <DoubleAnimation BeginTime="0:0:0.1" Storyboard.TargetName="Excessive" To="0" Duration="0:0:0.1"  Storyboard.TargetProperty="(UIElement.RenderTransform).(Children)[0].ScaleY" />
+
+            <DoubleAnimation BeginTime="0:0:0.2" Storyboard.TargetName="Suitable" To="0" Duration="0:0:0.1"  Storyboard.TargetProperty="(UIElement.RenderTransform).(Children)[0].ScaleX" />
+            <DoubleAnimation BeginTime="0:0:0.2" Storyboard.TargetName="Suitable" To="0" Duration="0:0:0.1"  Storyboard.TargetProperty="(UIElement.RenderTransform).(Children)[0].ScaleY" />
+
+            <DoubleAnimation BeginTime="0:0:0.3" Storyboard.TargetName="LightDry" To="0" Duration="0:0:0.1"  Storyboard.TargetProperty="(UIElement.RenderTransform).(Children)[0].ScaleX" />
+            <DoubleAnimation BeginTime="0:0:0.3" Storyboard.TargetName="LightDry" To="0" Duration="0:0:0.1"  Storyboard.TargetProperty="(UIElement.RenderTransform).(Children)[0].ScaleY" />
+
+            <DoubleAnimation BeginTime="0:0:0.4" Storyboard.TargetName="InDrought" To="0" Duration="0:0:0.1"  Storyboard.TargetProperty="(UIElement.RenderTransform).(Children)[0].ScaleX" />
+            <DoubleAnimation BeginTime="0:0:0.4" Storyboard.TargetName="InDrought" To="0" Duration="0:0:0.1"  Storyboard.TargetProperty="(UIElement.RenderTransform).(Children)[0].ScaleY" />
+
+            <DoubleAnimation BeginTime="0:0:0.5" Storyboard.TargetName="SevereDrought" To="0" Duration="0:0:0.1"  Storyboard.TargetProperty="(UIElement.RenderTransform).(Children)[0].ScaleX" />
+            <DoubleAnimation BeginTime="0:0:0.5" Storyboard.TargetName="SevereDrought" To="0" Duration="0:0:0.1"  Storyboard.TargetProperty="(UIElement.RenderTransform).(Children)[0].ScaleY" />
+
+            <DoubleAnimation BeginTime="0:0:0.6" Storyboard.TargetName="ExtremeDrought" To="0" Duration="0:0:0.1"  Storyboard.TargetProperty="(UIElement.RenderTransform).(Children)[0].ScaleX" />
+            <DoubleAnimation BeginTime="0:0:0.6" Storyboard.TargetName="ExtremeDrought" To="0" Duration="0:0:0.1"  Storyboard.TargetProperty="(UIElement.RenderTransform).(Children)[0].ScaleY" />
+
+            <DoubleAnimation BeginTime="0:0:0.7" Storyboard.TargetName="EmtyLayer" To="0" Duration="0:0:0.1"  Storyboard.TargetProperty="(UIElement.RenderTransform).(Children)[0].ScaleX" />
+            <DoubleAnimation BeginTime="0:0:0.7" Storyboard.TargetName="EmtyLayer" To="0" Duration="0:0:0.1"  Storyboard.TargetProperty="(UIElement.RenderTransform).(Children)[0].ScaleY" />
+        </Storyboard>
+        <Style x:Key="CircleMenuChildButton" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Canvas>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualStateGroup.Transitions>
+                                        <VisualTransition From="Pressed" To="Normal" GeneratedDuration="0:0:0.1"/>
+                                        <VisualTransition From="MouseOver" To="Pressed" GeneratedDuration="0:0:0.1"/>
+                                        <VisualTransition From="Pressed" To="MouseOver" GeneratedDuration="0:0:0.1"/>
+                                    </VisualStateGroup.Transitions>
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="MouseOver"/>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="PathFillColor" Storyboard.TargetProperty="Opacity" To="0.5" />
+                                            <DoubleAnimation BeginTime="0" Storyboard.TargetName="RenderScaleX" To="0.9" Duration="0:0:0.1"  Storyboard.TargetProperty="ScaleX" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Canvas>
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform x:Name="RenderScaleX" />
+                                        <RotateTransform/>
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path x:Name="PathFillColor" Fill="{TemplateBinding Property=Button.Background}">
+                                    <Path.Data>
+                                        <PathGeometry>
+                                            <PathFigure StartPoint="1,24" IsClosed="True">
+                                                <LineSegment Point="35,58"/>
+                                                <ArcSegment Size="30,30" Point="59,48" SweepDirection="Clockwise"/>
+                                                <LineSegment Point="59,1"/>
+                                                <ArcSegment Size="80,80" Point="1,24" SweepDirection="Counterclockwise"/>
+                                            </PathFigure>
+                                        </PathGeometry>
+                                    </Path.Data>
+                                </Path>
+                                <TextBlock Foreground="Black" Text="{TemplateBinding Property=Button.Content}"  Canvas.Left="20" Canvas.Top="20">
+                                    <TextBlock.RenderTransform>
+                                        <RotateTransform Angle="-25"/>
+                                    </TextBlock.RenderTransform>
+                                </TextBlock>
+                            </Canvas>
+                        </Canvas>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="Ellipse" x:Key="BigCircle">
+            <Setter Property="Width" Value="75"/>
+            <Setter Property="Height" Value="75"/>
+            <Setter Property="Fill" Value="#FFFAFA"/>
+        </Style>
+    </Window.Resources>
+    <Grid Name="gridTitleBar">
+      
+        <Canvas RenderTransformOrigin="1,1" Width="200" Height="200">
+            <Button x:Name="Waterlogging" Background="#0024CE" Height="60" Width="60" Margin="42,18,0,0" Canvas.Top="0" Canvas.Left="0" RenderTransformOrigin="0.97,1.4" Content="渍涝" Style="{StaticResource CircleMenuChildButton}">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="0" ScaleY="0"/>
+                        <RotateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+
+            <Button x:Name="Excessive" Background="#00ace7" Height="60" Width="60" Margin="42,18,0,0" Canvas.Top="0" Canvas.Left="0" RenderTransformOrigin="0.97,1.4" Content="过多" Style="{StaticResource CircleMenuChildButton}">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="0" ScaleY="0"/>
+                        <RotateTransform Angle="45"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+
+            <Button x:Name="Suitable" Background="#9dff00"  Height="60" Width="60" Margin="42,18,0,0" Canvas.Top="0" Canvas.Left="0" RenderTransformOrigin="0.97,1.4"  Content="适宜" Style="{StaticResource CircleMenuChildButton}">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="0" ScaleY="0"/>
+                        <RotateTransform Angle="90"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+
+            <Button x:Name="LightDry" Background="#ffef2f" Height="60" Width="60" Margin="42,18,0,0" Canvas.Top="0" Canvas.Left="0" RenderTransformOrigin="0.97,1.4" Content="轻旱" Style="{StaticResource CircleMenuChildButton}">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="0" ScaleY="0"/>
+                        <RotateTransform Angle="135"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+
+            <Button x:Name="InDrought" Background="#fa7806" Height="60" Width="60" Margin="42,18,0,0" Canvas.Top="0" Canvas.Left="0" RenderTransformOrigin="0.97,1.4" Content="轻旱" Style="{StaticResource CircleMenuChildButton}">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="0" ScaleY="0"/>
+                        <RotateTransform Angle="180"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+
+            <Button x:Name="SevereDrought" Background="#ee001b" Height="60" Width="60" Margin="42,18,0,0" Canvas.Top="0" Canvas.Left="0" RenderTransformOrigin="0.97,1.4" Content="重旱" Style="{StaticResource CircleMenuChildButton}">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="0" ScaleY="0"/>
+                        <RotateTransform Angle="225"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+
+            <Button x:Name="ExtremeDrought" Background="#74002b" Height="60" Width="60" Margin="42,18,0,0" Canvas.Top="0" Canvas.Left="0" RenderTransformOrigin="0.97,1.4" Content="极旱" Style="{StaticResource CircleMenuChildButton}">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="0" ScaleY="0"/>
+                        <RotateTransform Angle="270"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+
+            <Button x:Name="EmtyLayer" Background="White" Command="{Binding ApiCommand}" Content="Api" Height="60" Width="60" Margin="42,18,0,0" Canvas.Top="0" Canvas.Left="0" RenderTransformOrigin="0.97,1.4"  Style="{StaticResource CircleMenuChildButton}">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="0" ScaleY="0"/>
+                        <RotateTransform Angle="315"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Border Width="75" Height="75" Background="LightBlue" CornerRadius="50"  Canvas.Left="63" Canvas.Top="65" MouseLeftButtonDown="Rectangle_MouseLeftButtonDown">
+                <Border.Effect>
+                    <DropShadowEffect x:Name="OG" BlurRadius="0" Color="OrangeRed" Direction="0"
+ Opacity="0.6" RenderingBias="Performance" ShadowDepth="0">
+                        <Storyboard.TargetProperty>
+                            BlurRadius
+                        </Storyboard.TargetProperty>
+                    </DropShadowEffect>
+                </Border.Effect>
+                <Border.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <!--<BeginStoryboard>
+                            <Storyboard BeginTime="0:0:0" AutoReverse="True" RepeatBehavior="Forever">
+                                <ColorAnimation From="Red" To="Navy" Duration="0:0:1" RepeatBehavior="Forever" Storyboard.TargetProperty="Background.Color">
+                                </ColorAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>-->
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="(FrameworkElement.Effect).(DropShadowEffect.BlurRadius)" 
+                                                 BeginTime="00:00:00" From="0" To="20" Duration="00:00:01" AutoReverse="True" 
+                                                RepeatBehavior="Forever"/>
+                                <!--<ColorAnimation From="Yellow" To="YellowGreen"  BeginTime="00:00:00" Duration="00:00:01" RepeatBehavior="Forever"  Storyboard.TargetProperty="Background.Color">
+                                </ColorAnimation>-->
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Border.Triggers>
+            </Border>
+            <Button x:Name="SelectLayer" Height="75" Width="75" Canvas.Left="63" Canvas.Top="65" Click="SelectLayer_Click" Visibility="Collapsed">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Canvas>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualStateGroup.Transitions>
+                                        <VisualTransition GeneratedDuration="0:0:0.3" From="Normal" To="Disabled"/>
+                                        <VisualTransition GeneratedDuration="0:0:0.3" From="Disabled" To="Normal"/>
+                                    </VisualStateGroup.Transitions>
+
+                                    <VisualState x:Name="Normal">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="ButtonMask" Storyboard.TargetProperty="Opacity" To="0"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="ButtonMask" Storyboard.TargetProperty="Opacity" To="0.75"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+
+                            <Ellipse Fill="OrangeRed" Stretch="Fill" Height="75" Width="75">
+                                <Ellipse.Effect>
+                                    <DropShadowEffect ShadowDepth="1" Direction="200" BlurRadius="8" Color="#FF4F4F4F"/>
+                                </Ellipse.Effect>
+                            </Ellipse>
+                            <Ellipse Width="75" Height="75" x:Name="ButtonMask" Opacity="0">
+                                <Ellipse.Fill>
+                                    <SolidColorBrush Color="Gray"/>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                        </Canvas>
+
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+        </Canvas>
+
+       
+    </Grid>
+</Window>
