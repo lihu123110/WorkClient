@@ -18,7 +18,7 @@
         ShowIconOnTitleBar="True"
         ShowMaxRestoreButton="False"
         TitlebarHeight="30"
-        Background="Black" >
+        Background="#FF252525" >
     <!--<Window.Background>
         <ImageBrush ImageSource="Images/bg2.jpg">
         </ImageBrush>
@@ -45,6 +45,16 @@
                 <Setter Property="Header" Value="{Binding Name, Mode=OneWay}" />
                 <Setter Property="Icon" Value="{StaticResource AppThemeMenuIcon}" />
             </Style>
+
+            <ItemsPanelTemplate x:Key="ItemsPanelHorizontalTemplate">
+                <WrapPanel Orientation="Horizontal"/>
+            </ItemsPanelTemplate>
+            <Style x:Key="ListItemStyle" BasedOn="{StaticResource MaterialDesignListBoxItem}" TargetType="{x:Type ListBoxItem}">
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="Width" Value="150"/>
+                <Setter Property="Height" Value="70"/>
+            </Style>
         </ResourceDictionary>
     </Window.Resources>
     <Controls:MetroWindow.RightWindowCommands>
@@ -61,7 +71,17 @@
             <RowDefinition Height="70"/>
         </Grid.RowDefinitions>
         <Grid x:Name="menuGrid" Background="#FFF8F3F8" Grid.Row="1">
-            <StackPanel Orientation="Horizontal">
+            <ListBox ItemsPanel="{StaticResource ItemsPanelHorizontalTemplate}" ItemContainerStyle="{StaticResource ListItemStyle}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="{Binding Iocn}" Width="30" Height="30"/>
+                            <TextBlock Text="{Binding Name}" Margin="10,0" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <!--<StackPanel Orientation="Horizontal">
                 <Button Margin="0,0" Height="70" Width="150" Style="{StaticResource MaterialDesignFlatButton}">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="AccessPoint" Width="30" Height="30"/>
@@ -92,7 +112,7 @@
                         <TextBlock Text="系统设置" Margin="10,0" VerticalAlignment="Center"/>
                     </StackPanel>
                 </Button>
-            </StackPanel>
+            </StackPanel>-->
         </Grid>
     </Grid>
 </Controls:MetroWindow>
