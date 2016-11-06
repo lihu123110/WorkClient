@@ -56,8 +56,9 @@ namespace ClientOA.ViewModel
                 new HomePageInfo{Id=1,Name="首页",Iocn=PackIconKind.AccessPoint},
                 new HomePageInfo{Id=2,Name="工作流程",Iocn=PackIconKind.AccessPointNetwork},
                 new HomePageInfo{Id=3,Name="任务管理",Iocn=PackIconKind.Table},
-                new HomePageInfo{Id=4,Name="用户管理",Iocn=PackIconKind.Account},
+                new HomePageInfo{Id=4,Name="员工管理",Iocn=PackIconKind.Account},
                 new HomePageInfo{Id=5,Name="系统设置",Iocn=PackIconKind.Sale},
+                new HomePageInfo{Id=6,Name="更多",Iocn=PackIconKind.More},
             };
         }
         #endregion
