@@ -125,6 +125,7 @@
     <Compile Include="AggregateModuleCatalog.cs" />
     <Compile Include="Behaviors\DragWindowBehavior.cs" />
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Model\HomePageInfo.cs" />
     <Compile Include="RegionNames.cs" />
     <Compile Include="Shell.xaml.cs">
       <DependentUpon>Shell.xaml</DependentUpon>
